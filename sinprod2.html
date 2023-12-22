@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Product</title>
+</head>
+<body>
+    <section id="headr">
+        <a href="#"> <img src="Watches/logo2.png" class="logo" alt=""></a> 
+        <div>
+            <ul id="navbar">
+                <li><a class="active" href="index.php">Home</a></li>
+                <li><a href="shop.php">Shop</a></li>
+                <li><a href="smart.html">Smart Collection</a></li>
+                <li><a href="#footer">Contact</a></li>
+                <li><a href="Signup.php"><i class="bi bi-person"></i></a>
+                <li><a href="cart.php"><i class="bi bi-cart3 fa-lg"></i></a></li>
+            </ul>
+        </div>
+    </section>
+   <section id="proddet" class="section-p1">
+    <div class="single-pro-img">
+    </div>
+        <img src="Watches/patek philippe nautilus.jpg" width="30%" id="main" alt="">
+         <div class="single-pro-det">
+            <h6>Patek Phillippe</h6>
+            <h4>Patek Phillippe Nautilus </h4>
+            <h2> 6000 TND</h2>
+            <h4>Description</h4>
+            <span>Steel. Sapphire crystal case back. Water-resistant
+                35.2 mm. Height: 8.62 mm.
+            </span>
+            <button class="normal" onclick="addToCart()"> Add to cart </button> 
+        </div>
+   </section>
+   <footer class="section-p1">
+    <div class="coll">
+        <img src="Watches/logo.png" alt="">
+        <h4>Contact</h4>
+        <p> <strong>Adresse :</strong> Sahloul Sousse Tunisia</p>
+        <p> <strong>Phone :</strong> +216 00 000 000/+216 00 000 000/</p>
+        <div class="follow">
+            <h4>Follow Us</h4>
+            <div class="ic">
+                <i class="bi bi-facebook"></i>
+                <i class="bi bi-instagram"></i>
+                <i class="bi bi-github"></i>
+                <i class="bi bi-twitter"></i>
+            </div>
+        </div>   
+    </div>
+    <div class="coll">
+        <h4>About</h4>
+        <a href="#">About Us</a>
+        <a href="#">Policy</a>
+        <a href="#">Become a member</a>
+        <a href="#">Contact Us</a>
+    </div>
+    <div class="coll">
+        <h4>My Account</h4>
+        <a href="#">Sign In</a>
+        <a href="#">Order</a>
+        <a href="#">Contact Us</a>
+    </div>
+</footer>
+
+<script>
+    function addToCart() {
+        // Retrieve the product details
+        var productName = "Rolex Submariner";
+        var productPrice = 5000;
+
+        // Get the existing cart items from local storage
+        var cartItems = localStorage.getItem("cartItems");
+
+        // Parse the cart items JSON or create an empty array
+        cartItems = cartItems ? JSON.parse(cartItems) : [];
+
+        // Add the new product to the cart
+        var newProduct = {
+            name: productName,
+            price: productPrice
+        };
+        cartItems.push(newProduct);
+
+        // Store the updated cart items back to local storage
+        localStorage.setItem("cartItems", JSON.stringify(cartItems));
+
+        // Alert the user that the product has been added to the cart
+        alert("Product added to cart!");
+    }
+</script>
+
+</body>
+</html>
